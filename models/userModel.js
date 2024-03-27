@@ -15,6 +15,10 @@ const userSchema= mongoose.Schema({
             type:mongoose.Schema.Types.ObjectId,
             ref:"Event",
         },],
+        eventsCreated : [{
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Event",
+        },],
     },
     {
         timestamps:true

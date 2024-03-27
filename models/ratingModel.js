@@ -1,10 +1,22 @@
 const mongoose = require("mongoose");
 
 const ratingSchema = mongoose.Schema({
-    value : {
+    overall : {
         type : Number,
         required : true
     },
+        registrationExp : {
+            type : Number,
+            required : true
+        },
+        eventExp : {
+            type : Number,
+            required : true
+        },
+        breakfastExp : {
+            type : Number,
+            required : true
+        },
     likes : {
         type: Number
     },
