@@ -36,6 +36,37 @@
 
 ## API Documentation
 
+### Authentication Routes
+
+#### Register User
+- **URL:** `/api/auth/register`
+- **Method:** `POST`
+- **Description:** Registers a new user.
+- **Request Body:**
+  - `name`: Name of the user (String)
+  - `email`: Email of the user (String)
+  - `password`: Password of the user (String)
+- **Response:** Returns user details and authentication token upon successful registration.
+
+#### Login User
+- **URL:** `/api/auth/login`
+- **Method:** `POST`
+- **Description:** Authenticates a user.
+- **Request Body:**
+  - `email`: Email of the user (String)
+  - `password`: Password of the user (String)
+- **Response:** Returns user details and authentication token upon successful login.
+
+#### Fetch User
+- **URL:** `/api/auth/user`
+- **Method:** `POST`
+- **Description:** Retrieves details of a user.
+- **Authentication Required:** Yes
+- **Request Body:**
+  - `name`: Name of the user to fetch (String)
+- **Response:** Returns details of the requested user.
+  
+
 ### Event Routes
 
 #### Create Event
@@ -74,36 +105,6 @@
 - **Query Parameters:**
   - `id`: ID of the event to fetch (String)
 - **Response:** Returns details of the requested event.
-
-### Authentication Routes
-
-#### Register User
-- **URL:** `/api/auth/register`
-- **Method:** `POST`
-- **Description:** Registers a new user.
-- **Request Body:**
-  - `name`: Name of the user (String)
-  - `email`: Email of the user (String)
-  - `password`: Password of the user (String)
-- **Response:** Returns user details and authentication token upon successful registration.
-
-#### Login User
-- **URL:** `/api/auth/login`
-- **Method:** `POST`
-- **Description:** Authenticates a user.
-- **Request Body:**
-  - `email`: Email of the user (String)
-  - `password`: Password of the user (String)
-- **Response:** Returns user details and authentication token upon successful login.
-
-#### Fetch User
-- **URL:** `/api/auth/user`
-- **Method:** `POST`
-- **Description:** Retrieves details of a user.
-- **Authentication Required:** Yes
-- **Request Body:**
-  - `name`: Name of the user to fetch (String)
-- **Response:** Returns details of the requested user.
 
 ### Rating Routes
 
