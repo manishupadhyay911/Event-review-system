@@ -1,5 +1,38 @@
 
 ---
+# Event Review System
+
+## Features Implemented : 
+
+1. **Review Submission**:
+   - Allowed authorized users to submit reviews for events they have attended.
+
+2. **Rating System**:
+   - Enabled users to rate specific criteria:
+     - Registration experience
+     - Event experience
+     - Breakfast experience
+   - Provided an option for users to give an overall rating/review for the event.
+
+3. **Authentication**:
+   - Implemented authentication mechanisms to ensure only authorized users can submit reviews.
+
+4. **Interaction with Reviews**:
+   - Included endpoints for users to like and report reviews.
+   - Automatically flag reviews if reported more than five times.
+
+5. **Organizer Interaction**:
+   - Allowed organizers to respond to reviews.
+
+6. **Summary Generation**:
+   - Generated a summary of reviews for a specific event.
+
+7. **Rating Retrieval**:
+   - Retrieved ratings for each criterion mentioned above.
+
+8. **Pagination**:
+   - Enabled cursor/token based pagination for browsing through ratings and events, ensuring efficient handling of large datasets.
+
 
 ## API Documentation
 
@@ -131,3 +164,4 @@
 - **Response:** Returns the summary of reviews.
 
 ---
+
