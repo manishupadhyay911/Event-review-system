@@ -21,7 +21,7 @@ const eventSchema = mongoose.Schema({
         type:mongoose.Schema.Types.ObjectId,
         ref:"User",
     },
-    rating : [{
+    ratings : [{
         type:mongoose.Schema.Types.ObjectId,
         ref:"Rating",
     },],

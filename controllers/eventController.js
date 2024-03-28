@@ -1,7 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Event = require("../models/eventModel");
 const User = require("../Models/userModel");
-// const Organiser = require("../models/organiserModel")
 const createEvent = asyncHandler(async (req, res) => {
     const { name, date, location, price } = req.body;
     if (!name || !date || !location || !price) {
@@ -112,6 +111,7 @@ const fetchAllEvents= asyncHandler(async (req, res) =>{
 
 const attendEvent = asyncHandler(async (req, res) =>{
     const id = req.query.id;
+    const userId = req.user._id;
         //if already attended then cant attend
         //if created by user then cant attend
         //past event cannot be attended
@@ -123,7 +123,7 @@ const attendEvent = asyncHandler(async (req, res) =>{
         res.status(400);
         throw new Error("Cannot attend event, No event found");
     }
-    if(event.organiser === req.user._id) {
+    if(event.organiser === userId) {
         res.status(400);
         throw new Error("Event created by the same user");
     }
@@ -140,14 +140,13 @@ const attendEvent = asyncHandler(async (req, res) =>{
     if( eventAttended) {
         res.status(200).send({
             status: "Successful",
-            data : eventAttended
+            data : event
         })
     }
     else{
         res.status(400);
         throw new Error("Cannot attend event");
     }
-
 
 });
 module.exports = { createEvent, fetchEvent, fetchAllEvents, attendEvent};
